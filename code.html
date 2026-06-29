@@ -205,6 +205,7 @@
     #carousel-dots-container.dots-dark .carousel-dot {
       background-color: rgba(0, 0, 0, 0.25) !important;
     }
+
     #carousel-dots-container.dots-dark .carousel-dot.bg-white {
       background-color: #000000 !important;
     }
@@ -454,7 +455,7 @@
     <div id="promo-banner"
       class="bg-black text-white text-[11px] font-medium tracking-[0.15em] py-2.5 px-6 flex justify-between items-center z-50 transition-all duration-300">
       <div class="flex-1 text-center select-none">
-        Join the Chempaka Club today for exclusive in-store privileges | <a href="#store-locator"
+        Join the Chempaka Club today for exclusive in-store privileges | <a href="boutiques.html"
           class="underline underline-offset-2 hover:opacity-80 transition-opacity">Visit Our Boutiques</a>
       </div>
       <button onclick="dismissPromo()"
@@ -469,7 +470,7 @@
     <div id="utility-bar"
       class="hidden lg:grid grid-cols-3 items-center py-2 px-16 transition-all duration-300 overflow-hidden">
       <div class="flex justify-start items-center">
-        <a href="#store-locator" class="utility-link text-white/90 flex items-center gap-1.5 hover:text-white">
+        <a href="boutiques.html" class="utility-link text-white/90 flex items-center gap-1.5 hover:text-white">
           <span class="material-symbols-outlined text-[18px]"
             style="font-variation-settings: 'wght' 300;">location_on</span>
           Stores
@@ -484,7 +485,7 @@
             style="font-variation-settings: 'wght' 300;">person_outline</span>
           Login
         </a>
-        <a href="#appointment-booking" class="utility-link text-white/90 flex items-center gap-1.5 hover:text-white">
+        <a href="boutiques.html#appointment-booking" class="utility-link text-white/90 flex items-center gap-1.5 hover:text-white">
           <span class="material-symbols-outlined text-[18px]"
             style="font-variation-settings: 'wght' 300;">calendar_month</span>
           Book Appointment
@@ -522,17 +523,19 @@
 
           <!-- Center: Navigation Links + Action Icons -->
           <div class="col-span-6 lg:col-span-8 flex justify-center">
-            <nav class="flex items-center gap-3 lg:gap-5 xl:gap-10 transition-all duration-300" aria-label="Main navigation">
+            <nav class="flex items-center gap-3 lg:gap-5 xl:gap-10 transition-all duration-300"
+              aria-label="Main navigation">
               <a class="nav-link text-white/90 hover:text-white" href="#sale">Sale</a>
               <a class="nav-link text-white/90 hover:text-white" href="#our-collection">Showcase</a>
               <a class="nav-link text-white/90 hover:text-white" href="#about">About</a>
               <a class="nav-link text-white/90 hover:text-white" href="#club-registration">Membership</a>
-              <a class="nav-link text-white/90 hover:text-white" href="#store-locator">Boutiques</a>
-              <a class="nav-link text-white/90 hover:text-white" href="#appointment-booking">Appointment</a>
-              
+              <a class="nav-link text-white/90 hover:text-white" href="boutiques.html">Boutiques</a>
+              <a class="nav-link text-white/90 hover:text-white" href="boutiques.html#appointment-booking">Appointment</a>
+
               <!-- Vertical Divider -->
-              <span class="inline-nav-divider w-[1px] h-4 bg-white/20 select-none pointer-events-none transition-all duration-300"></span>
-              
+              <span
+                class="inline-nav-divider w-[1px] h-4 bg-white/20 select-none pointer-events-none transition-all duration-300"></span>
+
               <!-- Centered Header Actions (Search, Wishlist) -->
               <div class="inline-nav-icons flex items-center gap-1 transition-all duration-300">
                 <button onclick="toggleSearch(true)"
@@ -553,7 +556,8 @@
 
           <!-- Right: Action Icons (visible only when scrolled, acts as spacer when top of page) -->
           <div class="col-span-3 lg:col-span-2 flex justify-end items-center">
-            <div class="scrolled-nav-icons opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1">
+            <div
+              class="scrolled-nav-icons opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1">
               <button onclick="toggleSearch(true)"
                 class="header-icon hover:opacity-65 transition-opacity bg-transparent border-none text-white p-0 cursor-pointer flex items-center justify-center"
                 aria-label="Search">
@@ -589,12 +593,14 @@
         <a href="#" class="font-serif tracking-[0.02em] text-[20px] uppercase font-normal logo-text text-white"
           style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</a>
         <div class="flex items-center gap-1">
-          <button onclick="toggleSearch(true)" class="bg-transparent border-none text-white p-0 cursor-pointer flex items-center justify-center w-10 h-10"
+          <button onclick="toggleSearch(true)"
+            class="bg-transparent border-none text-white p-0 cursor-pointer flex items-center justify-center w-10 h-10"
             aria-label="Search">
             <span class="material-symbols-outlined text-[22px]"
               style="font-variation-settings: 'wght' 300;">search</span>
           </button>
-          <a href="#club-registration" class="flex items-center justify-center w-10 h-10 text-inherit" aria-label="Account">
+          <a href="#club-registration" class="flex items-center justify-center w-10 h-10 text-inherit"
+            aria-label="Account">
             <span class="material-symbols-outlined text-[22px]"
               style="font-variation-settings: 'wght' 300;">person_outline</span>
           </a>
@@ -643,13 +649,13 @@
       <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
         href="#club-registration" onclick="toggleMobileDrawer(false)">Membership</a>
       <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
-        href="#store-locator" onclick="toggleMobileDrawer(false)">Boutiques</a>
+        href="boutiques.html" onclick="toggleMobileDrawer(false)">Boutiques</a>
       <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
-        href="#appointment-booking" onclick="toggleMobileDrawer(false)">Appointment</a>
+        href="boutiques.html#appointment-booking" onclick="toggleMobileDrawer(false)">Appointment</a>
     </div>
     <!-- Drawer Footer -->
     <div class="p-6 border-t border-neutral-200 bg-neutral-100/50 space-y-4">
-      <a href="#store-locator"
+      <a href="boutiques.html"
         class="flex items-center gap-2.5 py-1 text-[11px] font-medium tracking-[0.15em] text-neutral-600 hover:text-black transition-colors"
         onclick="toggleMobileDrawer(false)">
         <span class="material-symbols-outlined text-[16px]"
@@ -672,13 +678,16 @@
     <section id="hero-banner" class="relative w-full h-screen overflow-hidden bg-white" data-theme="light">
       <div class="absolute inset-0 flex items-center bg-white bg-cover lg:bg-contain bg-center bg-no-repeat"
         style="background-image: url('hero_model_jewelry.jpg');">
-        
+
         <!-- Content (Centered on Mobile/Tablet, left-aligned at screen-left on Desktop) -->
-        <div class="absolute left-1/2 -translate-x-1/2 bottom-16 md:bottom-24 lg:left-20 lg:translate-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:bottom-auto flex flex-col items-center lg:items-start text-center lg:text-left text-neutral-900 max-w-full lg:max-w-4xl px-margin-mobile md:px-margin-desktop lg:px-0 z-20">
-          <span class="font-sans text-[13px] lg:text-[16px] font-light uppercase tracking-[0.12em] lg:tracking-[0.15em] text-neutral-600">
+        <div
+          class="absolute left-1/2 -translate-x-1/2 bottom-16 md:bottom-24 lg:left-20 lg:translate-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:bottom-auto flex flex-col items-center lg:items-start text-center lg:text-left text-neutral-900 max-w-full lg:max-w-4xl px-margin-mobile md:px-margin-desktop lg:px-0 z-20">
+          <span
+            class="font-sans text-[13px] lg:text-[16px] font-light uppercase tracking-[0.12em] lg:tracking-[0.15em] text-neutral-600">
             EXCLUSIVE CHEMPAKA MEMBERSHIP
           </span>
-          <h1 class="font-serif text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-normal leading-tight text-neutral-900 mt-2 lg:mt-3">
+          <h1
+            class="font-serif text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-normal leading-tight text-neutral-900 mt-2 lg:mt-3">
             Get up to 15% Discount on all products
           </h1>
           <div class="mt-8 lg:mt-12">
@@ -692,9 +701,11 @@
     </section>
 
     <!-- Section 2: Masters of Gold since 1995 (Intro Section) -->
-    <section id="masters-of-gold" class="bg-white py-16 lg:py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <section id="masters-of-gold"
+      class="bg-white py-16 lg:py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
       <div class="text-center max-w-3xl mx-auto space-y-6">
-        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-black tracking-wide font-normal">Masters of Gold since 1995</h2>
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-black tracking-wide font-normal">Masters of Gold
+          since 1995</h2>
         <p class="font-sans text-neutral-600 text-sm md:text-base leading-relaxed font-light">
           Since 1995, Chempaka's passion for innovation and design, and mastery of gold craftsmanship has defined
           Chempaka as the leading jewelry and accessories brand. Discover our classic categories reimagined with modern
@@ -704,9 +715,11 @@
     </section>
 
     <!-- Section 3: Shop by Category (Swarovski Octagonal Grid) -->
-    <section id="our-collection" class="bg-white pb-20 lg:pb-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto scroll-mt-24">
+    <section id="our-collection"
+      class="bg-white pb-20 lg:pb-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto scroll-mt-24">
       <div class="text-center mb-16">
-        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-black tracking-wide font-normal">Shop by Category</h2>
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-black tracking-wide font-normal">Shop by Category
+        </h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-10">
         <!-- Item 1: Rings -->
@@ -751,7 +764,7 @@
         </a>
       </div>
     </section>
- 
+
     <!-- Section 3: Disney Winnie the Pooh Split Campaign -->
     <section class="w-full bg-[#EAE7E2] grid grid-cols-1 md:grid-cols-2">
       <!-- Left Side: Media Element -->
@@ -790,11 +803,11 @@
         <div class="text-center mb-12">
           <h2 class="font-serif text-3xl md:text-4xl text-black font-normal">Shine On</h2>
         </div>
- 
+
         <!-- Product Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <!-- Card 1 -->
-          <a href="#"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.44_202606252242.jpeg" alt="Gema Necklace"
@@ -818,7 +831,7 @@
             </div>
           </a>
           <!-- Card 2 -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.45_202606252242_2.jpeg" alt="Gema Earrings"
@@ -842,7 +855,7 @@
             </div>
           </a>
           <!-- Card 3 -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.45_202606252242.jpeg" alt="Gema Bracelet"
@@ -866,7 +879,7 @@
             </div>
           </a>
           <!-- Card 4 -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.43_202606252242.jpeg" alt="Gema Ring"
@@ -899,11 +912,11 @@
         <div class="text-center mb-12">
           <h2 class="font-serif text-3xl md:text-4xl text-black font-normal">Timeless Love</h2>
         </div>
- 
+
         <!-- Product Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <!-- Card 1 (Sale) -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.47_202606252242.jpeg" alt="Matrix Bracelet"
@@ -925,7 +938,7 @@
             </div>
           </a>
           <!-- Card 2 (Sale) -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.46_202606252242_2.jpeg" alt="Hyperbola Pendant"
@@ -947,7 +960,7 @@
             </div>
           </a>
           <!-- Card 3 (Sale) -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.47_202606252242_2.jpeg" alt="Attract Earrings"
@@ -968,7 +981,7 @@
             </div>
           </a>
           <!-- Card 4 (Sale) -->
-          <a href="#appointment-booking"
+          <a href="boutiques.html#appointment-booking"
             class="group block bg-white border border-neutral-100 p-4 relative transition-all duration-300 hover:shadow-lg">
             <div class="aspect-square w-full overflow-hidden bg-[#f7f7f7] mb-6 relative">
               <img src="product_images/WhatsApp_Image_2026-05-24_at_5.34.46_202606252242.jpeg" alt="Swan Ring"
@@ -1008,7 +1021,7 @@
             angle.
           </p>
           <div class="flex flex-col items-center space-y-4 pt-4">
-            <a href="#appointment-booking"
+            <a href="boutiques.html#appointment-booking"
               class="inline-block font-sans text-sm font-semibold text-black underline underline-offset-4 hover:text-neutral-600 transition-colors">
               Book Boutique Consultation
             </a>
@@ -1020,8 +1033,7 @@
         </div>
       </div>
       <!-- Right Side: Media Element -->
-      <div
-        class="relative w-full aspect-square overflow-hidden order-first md:order-last">
+      <div class="relative w-full aspect-square overflow-hidden order-first md:order-last">
         <img src="ruby_necklace.jpg" alt="Selah Ruby Campaign Shot"
           class="absolute inset-0 w-full h-full object-cover" />
       </div>
@@ -1066,13 +1078,13 @@
               </ul>
             </div>
             <div class="pt-8">
-              <a href="#appointment-booking"
+              <a href="boutiques.html#appointment-booking"
                 class="inline-block bg-primary text-black px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors">
                 Book In-Store Appointment
               </a>
             </div>
           </div>
- 
+
           <!-- Right: Gold Exchange & Valuation -->
           <div
             class="flex flex-col justify-between p-8 md:p-12 bg-[#EAE7E2] border border-neutral-100 rounded-none relative">
@@ -1099,7 +1111,7 @@
               </ul>
             </div>
             <div class="pt-8">
-              <a href="#appointment-booking"
+              <a href="boutiques.html#appointment-booking"
                 class="inline-block bg-black text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors">
                 Book In-Store Valuation
               </a>
@@ -1108,9 +1120,9 @@
         </div>
       </div>
     </section>
- 
- 
- 
+
+
+
     <!-- Section 8: Editorial Stories (3 Columns) -->
     <section id="about"
       class="bg-[#EAE7E2] py-16 lg:py-24 px-margin-mobile md:px-margin-desktop border-t border-b border-neutral-100 scroll-mt-24">
@@ -1225,221 +1237,8 @@
         </div>
       </div>
     </section>
- 
-    <!-- Section 9.5: Store Locator & Appointment Booking -->
-    <section id="store-locator" class="py-16 lg:py-24 bg-[#EAE7E2] border-b border-neutral-100 scroll-mt-24">
-      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="text-center mb-16 max-w-3xl mx-auto space-y-4">
-          <span class="text-xs font-bold tracking-widest uppercase text-neutral-500">Boutique Finder & Booking</span>
-          <h2 id="appointment-booking"
-            class="font-serif text-3xl md:text-4xl lg:text-5xl text-black tracking-wide font-normal scroll-mt-24">Book a
-            Private Consultation</h2>
-          <p class="font-sans text-neutral-600 text-sm md:text-base leading-relaxed font-light">
-            Schedule your personalized gold valuation or private shopping appointment. Select a boutique location and
-            reserve your private lounge session.
-          </p>
-        </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <!-- Left Column: Boutiques List (5 cols) -->
-          <div class="lg:col-span-5 space-y-6">
-            <h3 class="font-serif text-xl text-black font-normal uppercase tracking-wider">Our Boutiques</h3>
 
-            <!-- Boutique 1 -->
-            <div
-              class="p-6 bg-white border border-neutral-100 shadow-sm space-y-3 relative hover:border-black transition-colors duration-300">
-              <div class="flex justify-between items-start">
-                <h4 class="font-sans text-sm font-bold uppercase tracking-wider text-black">Pavilion Kuala Lumpur</h4>
-                <span
-                  class="bg-[#e6bfa7] text-[#5c412f] text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest">Flagship</span>
-              </div>
-              <p class="font-sans text-xs text-neutral-600 font-light">
-                Lot 3.01.02, Level 3, Pavilion KL, 168 Jalan Bukit Bintang, 55100 Kuala Lumpur
-              </p>
-              <div class="flex gap-6 text-[11px] font-sans text-neutral-500 pt-1">
-                <span class="flex items-center gap-1 flex-wrap"><span
-                    class="material-symbols-outlined text-[14px]">phone</span> +60 3-2148 9595</span>
-                <span class="flex items-center gap-1 flex-wrap"><span
-                    class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 10:00 PM</span>
-              </div>
-            </div>
-
-            <!-- Boutique 2 -->
-            <div
-              class="p-6 bg-white border border-neutral-100 shadow-sm space-y-3 relative hover:border-black transition-colors duration-300">
-              <h4 class="font-sans text-sm font-bold uppercase tracking-wider text-black">The Gardens Mall</h4>
-              <p class="font-sans text-xs text-neutral-600 font-light">
-                F-220, First Floor, The Gardens Mall, Mid Valley City, 59200 Kuala Lumpur
-              </p>
-              <div class="flex gap-6 text-[11px] font-sans text-neutral-500 pt-1">
-                <span class="flex items-center gap-1 flex-wrap"><span
-                    class="material-symbols-outlined text-[14px]">phone</span> +60 3-2284 3939</span>
-                <span class="flex items-center gap-1 flex-wrap"><span
-                    class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 10:00 PM</span>
-              </div>
-            </div>
-
-            <!-- Boutique 3 -->
-            <div
-              class="p-6 bg-white border border-neutral-100 shadow-sm space-y-3 relative hover:border-black transition-colors duration-300">
-              <h4 class="font-sans text-sm font-bold uppercase tracking-wider text-black">Gurney Plaza</h4>
-              <p class="font-sans text-xs text-neutral-600 font-light">
-                G-12, Ground Floor, Gurney Plaza, Persiaran Gurney, 10250 Penang
-              </p>
-              <div class="flex gap-6 text-[11px] font-sans text-neutral-500 pt-1">
-                <span class="flex items-center gap-1 flex-wrap"><span
-                    class="material-symbols-outlined text-[14px]">phone</span> +60 4-226 1515</span>
-                <span class="flex items-center gap-1 flex-wrap"><span
-                    class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 10:00 PM</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Booking Form (7 cols) -->
-          <div
-            class="lg:col-span-7 bg-white p-8 md:p-12 border border-neutral-100 shadow-lg relative min-h-[450px] flex flex-col justify-center">
-            <!-- Form Container -->
-            <div id="booking-form-container">
-              <h3 class="font-serif text-2xl text-black font-normal mb-8">Schedule Consultation</h3>
-              <form id="consultation-form" onsubmit="submitBookingForm(event)" class="space-y-6">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <!-- Select Boutique -->
-                  <div class="relative">
-                    <select id="booking-boutique" required
-                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black appearance-none transition-colors">
-                      <option value="" disabled selected>Select Boutique</option>
-                      <option value="Pavilion KL">Pavilion Kuala Lumpur</option>
-                      <option value="The Gardens Mall">The Gardens Mall</option>
-                      <option value="Gurney Plaza">Gurney Plaza Penang</option>
-                    </select>
-                    <p id="error-booking-boutique"
-                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
-                      boutique</p>
-                  </div>
-
-                  <!-- Select Service -->
-                  <div class="relative">
-                    <select id="booking-service" required
-                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black appearance-none transition-colors">
-                      <option value="" disabled selected>Service Type</option>
-                      <option value="Gold Exchange">Gold Exchange & Valuation</option>
-                      <option value="Bespoke Design">Custom Jewelry Fitting & Styling</option>
-                      <option value="Private Viewing">VIP Showroom Private Viewing</option>
-                    </select>
-                    <p id="error-booking-service"
-                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
-                      service type</p>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <!-- Booking Date -->
-                  <div class="relative">
-                    <input type="date" id="booking-date" required
-                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black transition-colors" />
-                    <p id="error-booking-date"
-                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
-                      valid future date</p>
-                  </div>
-
-                  <!-- Booking Time -->
-                  <div class="relative">
-                    <select id="booking-time" required
-                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black appearance-none transition-colors">
-                      <option value="" disabled selected>Preferred Time</option>
-                      <option value="11:00 AM">11:00 AM</option>
-                      <option value="1:00 PM">01:00 PM</option>
-                      <option value="3:00 PM">03:00 PM</option>
-                      <option value="5:00 PM">05:00 PM</option>
-                      <option value="7:00 PM">07:00 PM</option>
-                    </select>
-                    <p id="error-booking-time"
-                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
-                      time slot</p>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <!-- Customer Name -->
-                  <div class="relative">
-                    <input type="text" id="booking-name" required placeholder=" "
-                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black placeholder-transparent transition-colors" />
-                    <label for="booking-name"
-                      class="absolute left-4 top-3 text-xs text-neutral-500 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3.5 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary transition-all pointer-events-none uppercase tracking-widest font-semibold">Full
-                      Name</label>
-                    <p id="error-booking-name"
-                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please enter your
-                      name</p>
-                  </div>
-
-                  <!-- Customer Phone -->
-                  <div class="relative">
-                    <input type="tel" id="booking-phone" required placeholder=" "
-                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black placeholder-transparent transition-colors" />
-                    <label for="booking-phone"
-                      class="absolute left-4 top-3 text-xs text-neutral-500 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3.5 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary transition-all pointer-events-none uppercase tracking-widest font-semibold">Phone
-                      Number</label>
-                    <p id="error-booking-phone"
-                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please enter a
-                      valid phone number</p>
-                  </div>
-                </div>
-
-                <!-- Submit Booking -->
-                <div class="pt-4">
-                  <button type="submit"
-                    class="w-full bg-black hover:bg-primary text-white py-4 px-8 text-xs font-bold uppercase tracking-widest transition-colors duration-300 rounded-none flex items-center justify-center gap-2">
-                    <span>Confirm Appointment</span>
-                    <span class="material-symbols-outlined text-[16px]">calendar_today</span>
-                  </button>
-                </div>
-
-              </form>
-            </div>
-
-            <!-- Success Booking Container (Hidden initially) -->
-            <div id="booking-success-container" class="hidden text-center space-y-6 py-6 transition-all duration-500">
-              <div
-                class="w-20 h-20 bg-primary/10 text-primary flex items-center justify-center rounded-full mx-auto mb-4 animate-bounce">
-                <span class="material-symbols-outlined text-4xl">check</span>
-              </div>
-              <h3 class="font-serif text-3xl text-black font-normal">Appointment Confirmed</h3>
-              <p class="font-sans text-neutral-600 text-sm max-w-md mx-auto leading-relaxed font-light">
-                Your booking is successful! A styling advisor from our <strong id="success-boutique-name">Pavilion
-                  KL</strong> boutique will contact you shortly to confirm details.
-              </p>
-
-              <div
-                class="bg-[#EAE7E2] border border-neutral-100 p-6 rounded-none max-w-sm mx-auto text-left space-y-3 text-xs">
-                <div class="flex justify-between border-b border-neutral-200 pb-2">
-                  <span class="text-neutral-500 uppercase tracking-widest font-semibold">Service</span>
-                  <span id="success-booking-service" class="font-bold text-black uppercase tracking-wider">Gold
-                    Exchange</span>
-                </div>
-                <div class="flex justify-between border-b border-neutral-200 pb-2">
-                  <span class="text-neutral-500 uppercase tracking-widest font-semibold">Date & Time</span>
-                  <span id="success-booking-datetime" class="font-bold text-black">28 June 2026 @ 3:00 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-neutral-500 uppercase tracking-widest font-semibold">Client Name</span>
-                  <span id="success-booking-client" class="font-bold text-black uppercase tracking-wider">Client
-                    Name</span>
-                </div>
-              </div>
-
-              <div class="pt-6">
-                <button onclick="resetBookingForm()"
-                  class="inline-block border border-neutral-300 hover:border-black text-black px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-colors duration-200">
-                  Book Another Session
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 10: Chempaka Club Registration Form -->
     <section id="club-registration"
@@ -1600,7 +1399,8 @@
 
                 <div class="flex justify-between items-start mb-12">
                   <div>
-                    <span class="font-serif text-lg font-normal tracking-[0.02em] text-white" style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</span>
+                    <span class="font-serif text-lg font-normal tracking-[0.02em] text-white"
+                      style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</span>
                     <span class="block text-[8px] text-[#e6bfa7] font-semibold tracking-widest uppercase">Club
                       Member</span>
                   </div>
@@ -1653,13 +1453,13 @@
         <div>
           <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-6 font-sans">Boutique Services</h4>
           <ul class="space-y-3 text-xs font-sans text-[#aaaaaa]">
-            <li><a href="#store-locator" class="hover:text-white transition-colors duration-200 block py-0.5">Boutique
+            <li><a href="boutiques.html" class="hover:text-white transition-colors duration-200 block py-0.5">Boutique
                 Locator</a></li>
-            <li><a href="#appointment-booking" class="hover:text-white transition-colors duration-200 block py-0.5">Book
+            <li><a href="boutiques.html#appointment-booking" class="hover:text-white transition-colors duration-200 block py-0.5">Book
                 Private Consultation</a></li>
             <li><a href="#gold-exchange" class="hover:text-white transition-colors duration-200 block py-0.5">Gold
                 Trade-In & Valuation</a></li>
-            <li><a href="#appointment-booking"
+            <li><a href="boutiques.html#appointment-booking"
                 class="hover:text-white transition-colors duration-200 block py-0.5">Custom Sizing Services</a></li>
             <li><a href="#" class="hover:text-white transition-colors duration-200 block py-0.5">Size Guide</a></li>
             <li><a href="#" class="hover:text-white transition-colors duration-200 block py-0.5">Contact Us</a></li>
@@ -1733,14 +1533,14 @@
             <span class="select-none">English</span>
           </div>
           <div class="mt-1 text-[10px] leading-relaxed max-w-sm md:max-w-md">
-            © 2026 Chempaka Trading Sdn Bhd. Company registration number 200901004470 (847404-D). All rights reserved. CHEMPAKA and the SWAN logo are registered and trademarks of Chempaka AG.
+            © 2026 Chempaka Trading Sdn Bhd. Company registration number 200901004470 (847404-D). All rights reserved.
+            CHEMPAKA and the SWAN logo are registered and trademarks of Chempaka AG.
           </div>
         </div>
 
         <!-- Brand Logo Wordmark -->
         <div class="order-first md:order-none shrink-0 md:justify-self-center text-center">
-          <span
-            class="font-serif text-3xl font-normal tracking-[0.02em] text-white uppercase select-none"
+          <span class="font-serif text-3xl font-normal tracking-[0.02em] text-white uppercase select-none"
             style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</span>
         </div>
 

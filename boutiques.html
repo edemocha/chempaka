@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Chempaka - Our Boutiques</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Noto+Sans:wght@300;400;500;600&amp;family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#eeeeee",
+            "on-primary-fixed-variant": "#5c412f",
+            "inverse-surface": "#2f3131",
+            "on-tertiary": "#ffffff",
+            "primary": "#A4B5B9",
+            "surface-container-highest": "#e2e2e2",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#786f65",
+            "primary-fixed": "#ffdcc7",
+            "on-tertiary-fixed": "#201b14",
+            "error": "#ba1a1a",
+            "tertiary": "#5f574e",
+            "on-background": "#1a1c1c",
+            "on-secondary-container": "#775e4a",
+            "surface-dim": "#dadada",
+            "primary-container": "#a4b5b9",
+            "on-surface-variant": "#4f453e",
+            "surface": "#EAE7E2",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#fff4ef",
+            "tertiary-fixed-dim": "#d0c5b9",
+            "on-secondary-fixed": "#291808",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#e6bfa7",
+            "surface-bright": "#EAE7E2",
+            "on-tertiary-fixed-variant": "#4d463d",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#fedcc3",
+            "outline": "#81746d",
+            "on-surface": "#1a1c1c",
+            "secondary-container": "#fbd9c0",
+            "error-container": "#ffdad6",
+            "surface-tint": "#765845",
+            "background": "#EAE7E2",
+            "primary-fixed-dim": "#e6bfa7",
+            "secondary-fixed-dim": "#e1c0a8",
+            "on-tertiary-container": "#fff4ea",
+            "on-secondary-fixed-variant": "#594230",
+            "outline-variant": "#d3c3bb",
+            "surface-container-low": "#EAE7E2",
+            "tertiary-fixed": "#ece1d5",
+            "secondary": "#2C2F44",
+            "inverse-on-surface": "#f0f1f1",
+            "surface-variant": "#e2e2e2",
+            "on-primary-fixed": "#2b1608",
+            "surface-container-high": "#e8e8e8",
+            "accent-blue": "#D0D2DE"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "64px",
+            "section-gap": "120px",
+            "container-max": "1280px",
+            "gutter": "24px",
+            "unit": "8px",
+            "margin-mobile": "20px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Playfair Display"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "label-md": ["Inter"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"]
+          },
+          "fontSize": {
+            "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Force header to be white background with black text on boutiques page */
+    header {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+    header::before,
+    header::after {
+      opacity: 0 !important;
+    }
+    header .logo-text,
+    header .scrolled-logo-text {
+      color: #000000 !important;
+    }
+    header .nav-link {
+      color: #000000 !important;
+    }
+    header .nav-link:hover {
+      color: #000000 !important;
+    }
+    header .material-symbols-outlined {
+      color: #000000 !important;
+    }
+    header .utility-link {
+      color: #000000 !important;
+    }
+    header #utility-bar {
+      border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* --- Collapsed scrolled state --- */
+    header.scrolled {
+      background-color: #ffffff !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+    header.scrolled #utility-bar {
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    header.scrolled #promo-banner {
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    header.scrolled #logo-row {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    header.scrolled #scrolled-logo {
+      opacity: 1;
+      width: auto;
+      max-width: 200px;
+    }
+    header.scrolled #navbar-container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    header.scrolled .inline-nav-divider,
+    header.scrolled .inline-nav-icons {
+      display: none !important;
+    }
+    header.scrolled .scrolled-nav-icons {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    /* Custom input/select typography fallback */
+    input, select, textarea {
+      font-family: 'Noto Sans', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+  <!-- TopNavBar (Swarovski-Exact Layout) -->
+  <header id="main-header"
+    class="fixed top-0 w-full z-50 transition-all duration-500 bg-white text-black border-b border-neutral-100">
+    <!-- Top Promotion Banner -->
+    <div id="promo-banner"
+      class="bg-black text-white text-[11px] font-medium tracking-[0.15em] py-2.5 px-6 flex justify-between items-center z-50 transition-all duration-300">
+      <div class="flex-1 text-center select-none">
+        Join the Chempaka Club today for exclusive in-store privileges | <a href="#store-locator"
+          class="underline underline-offset-2 hover:opacity-80 transition-opacity">Visit Our Boutiques</a>
+      </div>
+      <button onclick="dismissPromo()"
+        class="text-white hover:opacity-70 transition-opacity bg-transparent border-none cursor-pointer p-0 ml-4"
+        aria-label="Close promotional banner">
+        <span class="material-symbols-outlined text-[16px] leading-none"
+          style="font-variation-settings: 'wght' 300;">close</span>
+      </button>
+    </div>
+
+    <!-- Utility Bar -->
+    <div id="utility-bar"
+      class="hidden lg:grid grid-cols-3 items-center py-2 px-16 border-b border-neutral-200 transition-all duration-300 overflow-hidden">
+      <div class="flex justify-start items-center">
+        <a href="#store-locator" class="utility-link text-black/90 flex items-center gap-1.5 hover:text-black">
+          <span class="material-symbols-outlined text-[18px]"
+            style="font-variation-settings: 'wght' 300;">location_on</span>
+          Stores
+        </a>
+      </div>
+      <div class="utility-link text-neutral-500 select-none text-center">
+        Chempaka Gold Exchange &amp; Valuation Available in Boutiques
+      </div>
+      <div class="flex justify-end items-center gap-6">
+        <a href="code.html#club-registration" class="utility-link text-black/90 flex items-center gap-1.5 hover:text-black">
+          <span class="material-symbols-outlined text-[18px]"
+            style="font-variation-settings: 'wght' 300;">person_outline</span>
+          Login
+        </a>
+        <a href="#appointment-booking" class="utility-link text-black/90 flex items-center gap-1.5 hover:text-black">
+          <span class="material-symbols-outlined text-[18px]"
+            style="font-variation-settings: 'wght' 300;">calendar_month</span>
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Navigation Container -->
+    <div id="navbar-container" class="relative transition-all duration-500 py-4 px-5 md:px-6 lg:px-16">
+      <div id="nav-desktop-layout" class="hidden md:flex flex-col transition-all duration-500">
+        <!-- Row 1: Centered Logo Wordmark -->
+        <div id="logo-row" class="flex justify-center pt-3 pb-3 transition-all duration-500">
+          <a href="code.html"
+            class="font-serif tracking-[0.02em] text-[36px] md:text-[56px] lg:text-[110px] leading-none uppercase font-normal logo-text text-black"
+            style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</a>
+        </div>
+
+        <!-- Row 2: Navigation + Icons -->
+        <div id="links-row" class="grid grid-cols-12 items-center w-full transition-all duration-500">
+          <div class="col-span-3 lg:col-span-2 flex justify-start items-center">
+            <div id="scrolled-logo" class="opacity-0 w-0 overflow-hidden transition-all duration-500 shrink-0">
+              <a href="code.html"
+                class="font-serif tracking-[0.02em] text-[18px] uppercase font-normal text-black scrolled-logo-text whitespace-nowrap"
+                style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</a>
+            </div>
+          </div>
+
+          <div class="col-span-6 lg:col-span-8 flex justify-center">
+            <nav class="flex items-center gap-3 lg:gap-5 xl:gap-10 transition-all duration-300"
+              aria-label="Main navigation">
+              <a class="nav-link text-black/90 hover:text-black" href="code.html#sale">Sale</a>
+              <a class="nav-link text-black/90 hover:text-black" href="code.html#our-collection">Showcase</a>
+              <a class="nav-link text-black/90 hover:text-black" href="code.html#about">About</a>
+              <a class="nav-link text-black/90 hover:text-black" href="code.html#club-registration">Membership</a>
+              <a class="nav-link text-black/90 hover:text-black" href="#store-locator">Boutiques</a>
+              <a class="nav-link text-black/90 hover:text-black" href="#appointment-booking">Appointment</a>
+
+              <span class="inline-nav-divider w-[1px] h-4 bg-neutral-200 select-none pointer-events-none transition-all duration-300"></span>
+
+              <div class="inline-nav-icons flex items-center gap-1 transition-all duration-300">
+                <button onclick="toggleSearch(true)"
+                  class="header-icon hover:opacity-65 transition-opacity bg-transparent border-none text-black p-0 cursor-pointer flex items-center justify-center"
+                  aria-label="Search">
+                  <span class="material-symbols-outlined text-[22px]"
+                    style="font-variation-settings: 'wght' 300;">search</span>
+                </button>
+                <a href="code.html#club-registration"
+                  class="header-icon hover:opacity-65 transition-opacity flex items-center justify-center text-black"
+                  aria-label="Wishlist">
+                  <span class="material-symbols-outlined text-[22px]"
+                    style="font-variation-settings: 'wght' 300;">favorite_border</span>
+                </a>
+              </div>
+            </nav>
+          </div>
+
+          <div class="col-span-3 lg:col-span-2 flex justify-end items-center">
+            <div class="scrolled-nav-icons opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-1">
+              <button onclick="toggleSearch(true)"
+                class="header-icon hover:opacity-65 transition-opacity bg-transparent border-none text-black p-0 cursor-pointer flex items-center justify-center"
+                aria-label="Search">
+                <span class="material-symbols-outlined text-[22px]"
+                  style="font-variation-settings: 'wght' 300;">search</span>
+              </button>
+              <a href="code.html#club-registration"
+                class="header-icon hover:opacity-65 transition-opacity flex items-center justify-center text-black"
+                aria-label="Wishlist">
+                <span class="material-symbols-outlined text-[22px]"
+                  style="font-variation-settings: 'wght' 300;">favorite_border</span>
+              </a>
+              <a href="code.html#club-registration"
+                class="header-icon hover:opacity-65 transition-opacity flex items-center justify-center text-black"
+                aria-label="Account">
+                <span class="material-symbols-outlined text-[22px]"
+                  style="font-variation-settings: 'wght' 300;">person_outline</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Layout -->
+      <div id="nav-mobile-layout" class="flex md:hidden justify-between items-center w-full">
+        <button onclick="toggleMobileDrawer(true)"
+          class="focus:outline-none bg-transparent border-none text-black p-0 cursor-pointer" aria-label="Open menu">
+          <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'wght' 300;">menu</span>
+        </button>
+        <a href="code.html" class="font-serif tracking-[0.02em] text-[20px] uppercase font-normal logo-text text-black"
+          style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</a>
+        <div class="flex items-center gap-1">
+          <button onclick="toggleSearch(true)"
+            class="bg-transparent border-none text-black p-0 cursor-pointer flex items-center justify-center w-10 h-10"
+            aria-label="Search">
+            <span class="material-symbols-outlined text-[22px]"
+              style="font-variation-settings: 'wght' 300;">search</span>
+          </button>
+          <a href="code.html#club-registration" class="flex items-center justify-center w-10 h-10 text-inherit"
+            aria-label="Account">
+            <span class="material-symbols-outlined text-[22px]"
+              style="font-variation-settings: 'wght' 300;">person_outline</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Search Overlay -->
+      <div id="search-overlay"
+        class="absolute inset-0 bg-white text-black hidden flex items-center px-4 md:px-16 z-30 transition-all duration-300">
+        <div class="flex items-center w-full max-w-2xl mx-auto gap-4">
+          <span class="material-symbols-outlined text-neutral-400 text-[22px]"
+            style="font-variation-settings: 'wght' 300;">search</span>
+          <input type="text" placeholder="What are you looking for?"
+            class="w-full bg-transparent border-none focus:ring-0 text-[14px] placeholder-neutral-400 focus:outline-none text-black font-light tracking-wide"
+            style="font-family: 'Noto Sans', sans-serif;" />
+          <button onclick="toggleSearch(false)"
+            class="bg-transparent border-none text-neutral-400 hover:text-black p-0 cursor-pointer transition-colors">
+            <span class="material-symbols-outlined text-[20px]"
+              style="font-variation-settings: 'wght' 300;">close</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer"
+    class="fixed inset-y-0 left-0 w-80 bg-white text-black z-[100] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
+    <div class="p-6 flex justify-between items-center border-b border-neutral-200">
+      <span class="font-serif tracking-[0.02em] text-lg uppercase font-normal"
+        style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</span>
+      <button onclick="toggleMobileDrawer(false)"
+        class="focus:outline-none bg-transparent border-none text-black p-0 cursor-pointer">
+        <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'wght' 300;">close</span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-6 space-y-0">
+      <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
+        href="code.html#sale" onclick="toggleMobileDrawer(false)">Sale</a>
+      <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
+        href="code.html#our-collection" onclick="toggleMobileDrawer(false)">Showcase</a>
+      <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
+        href="code.html#about" onclick="toggleMobileDrawer(false)">About</a>
+      <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
+        href="code.html#club-registration" onclick="toggleMobileDrawer(false)">Membership</a>
+      <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
+        href="#store-locator" onclick="toggleMobileDrawer(false)">Boutiques</a>
+      <a class="block py-4 border-b border-neutral-200/60 text-[14px] font-normal tracking-[0.05em] text-black hover:text-neutral-500 transition-colors"
+        href="#appointment-booking" onclick="toggleMobileDrawer(false)">Appointment</a>
+    </div>
+    <div class="p-6 border-t border-neutral-200 bg-neutral-100/50 space-y-4">
+      <a href="#store-locator"
+        class="flex items-center gap-2.5 py-1 text-[11px] font-medium tracking-[0.15em] text-neutral-600 hover:text-black transition-colors"
+        onclick="toggleMobileDrawer(false)">
+        <span class="material-symbols-outlined text-[16px]"
+          style="font-variation-settings: 'wght' 300;">location_on</span> Stores
+      </a>
+      <a href="code.html#club-registration"
+        class="flex items-center gap-2.5 py-1 text-[11px] font-medium tracking-[0.15em] text-neutral-600 hover:text-black transition-colors"
+        onclick="toggleMobileDrawer(false)">
+        <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'wght' 300;">person</span>
+        Chempaka Club / Join
+      </a>
+    </div>
+  </div>
+
+  <div id="drawer-backdrop" class="fixed inset-0 bg-black/40 hidden z-[90]" onclick="toggleMobileDrawer(false)"></div>
+
+  <main class="pt-[140px] md:pt-[160px] lg:pt-[240px] bg-[#EAE7E2] min-h-screen">
+    <!-- Section: Store Locator & Appointment Booking -->
+    <section id="store-locator" class="py-16 lg:py-24 bg-[#EAE7E2] scroll-mt-24">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center mb-16 max-w-3xl mx-auto space-y-4">
+          <span class="text-xs font-bold tracking-widest uppercase text-neutral-500">Boutique Finder & Booking</span>
+          <h2 id="appointment-booking"
+            class="font-serif text-3xl md:text-4xl lg:text-5xl text-black tracking-wide font-normal scroll-mt-24">Book a
+            Private Consultation</h2>
+          <p class="font-sans text-neutral-600 text-sm md:text-base leading-relaxed font-light">
+            Schedule your personalized gold valuation or private shopping appointment. Select a boutique location and
+            reserve your private lounge session.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left Column: Boutiques List -->
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="font-serif text-xl text-black font-normal uppercase tracking-wider">Our Boutiques</h3>
+
+            <!-- Boutique 1 -->
+            <div
+              class="p-6 bg-white border border-neutral-100 shadow-sm space-y-3 relative hover:border-black transition-colors duration-300">
+              <div class="flex justify-between items-start">
+                <h4 class="font-sans text-sm font-bold uppercase tracking-wider text-black">Pavilion Kuala Lumpur</h4>
+                <span
+                  class="bg-[#e6bfa7] text-[#5c412f] text-[9px] font-bold px-2 py-0.5 uppercase tracking-widest">Flagship</span>
+              </div>
+              <p class="font-sans text-xs text-neutral-600 font-light">
+                Lot 3.01.02, Level 3, Pavilion KL, 168 Jalan Bukit Bintang, 55100 Kuala Lumpur
+              </p>
+              <div class="flex gap-6 text-[11px] font-sans text-neutral-500 pt-1">
+                <span class="flex items-center gap-1 flex-wrap"><span
+                    class="material-symbols-outlined text-[14px]">phone</span> +60 3-2148 9595</span>
+                <span class="flex items-center gap-1 flex-wrap"><span
+                    class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+
+            <!-- Boutique 2 -->
+            <div
+              class="p-6 bg-white border border-neutral-100 shadow-sm space-y-3 relative hover:border-black transition-colors duration-300">
+              <h4 class="font-sans text-sm font-bold uppercase tracking-wider text-black">The Gardens Mall</h4>
+              <p class="font-sans text-xs text-neutral-600 font-light">
+                F-220, First Floor, The Gardens Mall, Mid Valley City, 59200 Kuala Lumpur
+              </p>
+              <div class="flex gap-6 text-[11px] font-sans text-neutral-500 pt-1">
+                <span class="flex items-center gap-1 flex-wrap"><span
+                    class="material-symbols-outlined text-[14px]">phone</span> +60 3-2284 3939</span>
+                <span class="flex items-center gap-1 flex-wrap"><span
+                    class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+
+            <!-- Boutique 3 -->
+            <div
+              class="p-6 bg-white border border-neutral-100 shadow-sm space-y-3 relative hover:border-black transition-colors duration-300">
+              <h4 class="font-sans text-sm font-bold uppercase tracking-wider text-black">Gurney Plaza</h4>
+              <p class="font-sans text-xs text-neutral-600 font-light">
+                G-12, Ground Floor, Gurney Plaza, Persiaran Gurney, 10250 Penang
+              </p>
+              <div class="flex gap-6 text-[11px] font-sans text-neutral-500 pt-1">
+                <span class="flex items-center gap-1 flex-wrap"><span
+                    class="material-symbols-outlined text-[14px]">phone</span> +60 4-226 1515</span>
+                <span class="flex items-center gap-1 flex-wrap"><span
+                    class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Booking Form -->
+          <div
+            class="lg:col-span-7 bg-white p-8 md:p-12 border border-neutral-100 shadow-lg relative min-h-[450px] flex flex-col justify-center">
+            <!-- Form Container -->
+            <div id="booking-form-container">
+              <h3 class="font-serif text-2xl text-black font-normal mb-8">Schedule Consultation</h3>
+              <form id="consultation-form" onsubmit="submitBookingForm(event)" class="space-y-6">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Select Boutique -->
+                  <div class="relative">
+                    <select id="booking-boutique" required
+                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black appearance-none transition-colors">
+                      <option value="" disabled selected>Select Boutique</option>
+                      <option value="Pavilion KL">Pavilion Kuala Lumpur</option>
+                      <option value="The Gardens Mall">The Gardens Mall</option>
+                      <option value="Gurney Plaza">Gurney Plaza Penang</option>
+                    </select>
+                    <p id="error-booking-boutique"
+                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
+                      boutique</p>
+                  </div>
+
+                  <!-- Select Service -->
+                  <div class="relative">
+                    <select id="booking-service" required
+                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black appearance-none transition-colors">
+                      <option value="" disabled selected>Service Type</option>
+                      <option value="Gold Exchange">Gold Exchange & Valuation</option>
+                      <option value="Bespoke Design">Custom Jewelry Fitting & Styling</option>
+                      <option value="Private Viewing">VIP Showroom Private Viewing</option>
+                    </select>
+                    <p id="error-booking-service"
+                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
+                      service type</p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Booking Date -->
+                  <div class="relative">
+                    <input type="date" id="booking-date" required
+                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black transition-colors" />
+                    <p id="error-booking-date"
+                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
+                      valid future date</p>
+                  </div>
+
+                  <!-- Booking Time -->
+                  <div class="relative">
+                    <select id="booking-time" required
+                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black appearance-none transition-colors">
+                      <option value="" disabled selected>Preferred Time</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="1:00 PM">01:00 PM</option>
+                      <option value="3:00 PM">03:00 PM</option>
+                      <option value="5:00 PM">05:00 PM</option>
+                      <option value="7:00 PM">07:00 PM</option>
+                    </select>
+                    <p id="error-booking-time"
+                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please select a
+                      time slot</p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Customer Name -->
+                  <div class="relative">
+                    <input type="text" id="booking-name" required placeholder=" "
+                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black placeholder-transparent transition-colors" />
+                    <label for="booking-name"
+                      class="absolute left-4 top-3 text-xs text-neutral-500 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3.5 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary transition-all pointer-events-none uppercase tracking-widest font-semibold">Full
+                      Name</label>
+                    <p id="error-booking-name"
+                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please enter your
+                      name</p>
+                  </div>
+
+                  <!-- Customer Phone -->
+                  <div class="relative">
+                    <input type="tel" id="booking-phone" required placeholder=" "
+                      class="peer w-full bg-[#EAE7E2] border-b border-neutral-300 focus:border-primary focus:outline-none py-3 px-4 text-sm text-black placeholder-transparent transition-colors" />
+                    <label for="booking-phone"
+                      class="absolute left-4 top-3 text-xs text-neutral-500 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3.5 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary transition-all pointer-events-none uppercase tracking-widest font-semibold">Phone
+                      Number</label>
+                    <p id="error-booking-phone"
+                      class="text-error text-[10px] uppercase font-bold tracking-widest mt-1 hidden">Please enter a
+                      valid phone number</p>
+                  </div>
+                </div>
+
+                <!-- Submit Booking -->
+                <div class="pt-4">
+                  <button type="submit"
+                    class="w-full bg-black hover:bg-neutral-800 text-white py-4 px-8 text-xs font-bold uppercase tracking-widest transition-colors duration-300 rounded-none flex items-center justify-center gap-2">
+                    <span>Confirm Appointment</span>
+                    <span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+
+            <!-- Success Booking Container (Hidden initially) -->
+            <div id="booking-success-container" class="hidden text-center space-y-6 py-6 transition-all duration-500 animate-fadeIn">
+              <div
+                class="w-20 h-20 bg-primary/10 text-primary flex items-center justify-center rounded-full mx-auto mb-4 animate-bounce">
+                <span class="material-symbols-outlined text-4xl">check</span>
+              </div>
+              <h3 class="font-serif text-3xl text-black font-normal">Appointment Confirmed</h3>
+              <p class="font-sans text-neutral-600 text-sm max-w-md mx-auto leading-relaxed font-light">
+                Your booking is successful! A styling advisor from our <strong id="success-boutique-name">Pavilion KL</strong> boutique will contact you shortly to confirm details.
+              </p>
+
+              <div
+                class="bg-[#EAE7E2] border border-neutral-100 p-6 rounded-none max-w-sm mx-auto text-left space-y-3 text-xs">
+                <div class="flex justify-between border-b border-neutral-200 pb-2">
+                  <span class="text-neutral-500 uppercase tracking-widest font-semibold">Service</span>
+                  <span id="success-booking-service" class="font-bold text-black uppercase tracking-wider">Gold Exchange</span>
+                </div>
+                <div class="flex justify-between border-b border-neutral-200 pb-2">
+                  <span class="text-neutral-500 uppercase tracking-widest font-semibold">Date & Time</span>
+                  <span id="success-booking-datetime" class="font-bold text-black">28 June 2026 @ 3:00 PM</span>
+                </div>
+                <div class="flex justify-between pb-1">
+                  <span class="text-neutral-500 uppercase tracking-widest font-semibold">Guest</span>
+                  <span id="success-booking-client" class="font-bold text-black uppercase tracking-wider">Danial</span>
+                </div>
+              </div>
+
+              <div class="pt-4">
+                <button onclick="resetBookingForm()"
+                  class="inline-block font-sans text-xs font-bold uppercase tracking-widest text-black underline underline-offset-4 hover:text-neutral-500 transition-colors">
+                  Book Another Session
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Swarovski-Exact Style) -->
+  <footer class="bg-black text-white py-16 lg:py-24 px-margin-mobile md:px-margin-desktop border-t border-[#222222]">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="font-sans text-[11px] font-bold uppercase tracking-widest text-[#cccccc]">Join the Chempaka Club</h4>
+        <p class="font-sans text-xs text-[#888888] leading-relaxed font-light">
+          Subscribe to receive updates on boutique events, exclusive collections, and priority booking options.
+        </p>
+        <div class="pt-2">
+          <a href="code.html#club-registration"
+            class="inline-flex items-center gap-1.5 bg-[#222222] text-white hover:bg-white hover:text-black py-3 px-6 text-xs font-bold uppercase tracking-widest transition-all duration-300">
+            <span>Register Now</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+        <div class="space-y-4">
+          <h4 class="font-sans text-[11px] font-bold uppercase tracking-widest text-[#cccccc]">Our Brand</h4>
+          <ul class="space-y-2 text-xs text-[#888888] font-light">
+            <li><a href="code.html#about" class="hover:text-white transition-colors duration-200 block py-0.5">Masters of Gold</a></li>
+            <li><a href="code.html#about" class="hover:text-white transition-colors duration-200 block py-0.5">Heritage Story</a></li>
+            <li><a href="code.html#about" class="hover:text-white transition-colors duration-200 block py-0.5">Sustainability</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="font-sans text-[11px] font-bold uppercase tracking-widest text-[#cccccc]">Valuations</h4>
+          <ul class="space-y-2 text-xs text-[#888888] font-light">
+            <li><a href="code.html#our-services" class="hover:text-white transition-colors duration-200 block py-0.5">Gold Exchange</a></li>
+            <li><a href="code.html#our-services" class="hover:text-white transition-colors duration-200 block py-0.5">Bespoke Design</a></li>
+            <li><a href="code.html#our-services" class="hover:text-white transition-colors duration-200 block py-0.5">Private Lounge</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1 space-y-4">
+          <h4 class="font-sans text-[11px] font-bold uppercase tracking-widest text-[#cccccc]">Boutiques</h4>
+          <ul class="space-y-2 text-xs text-[#888888] font-light">
+            <li><a href="#store-locator" class="hover:text-white transition-colors duration-200 block py-0.5">Boutique Finder</a></li>
+            <li><a href="#appointment-booking" class="hover:text-white transition-colors duration-200 block py-0.5">Private Viewing</a></li>
+            <li><a href="#appointment-booking" class="hover:text-white transition-colors duration-200 block py-0.5">Contact Styling</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="max-w-container-max mx-auto border-t border-[#222222] my-10"></div>
+
+    <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-1.5 text-xs text-[#888888]">
+          <span class="material-symbols-outlined text-[16px] text-white">globe</span>
+          <span class="select-none">English</span>
+        </div>
+        <div class="mt-1 text-[10px] leading-relaxed max-w-sm md:max-w-md text-[#666666]">
+          © 2026 Chempaka Trading Sdn Bhd. Company registration number 200901004470 (847404-D). All rights reserved.
+          CHEMPAKA and the SWAN logo are registered and trademarks of Chempaka AG.
+        </div>
+      </div>
+
+      <div class="order-first md:order-none shrink-0 md:justify-self-center text-center">
+        <span class="font-serif text-3xl font-normal tracking-[0.02em] text-white uppercase select-none"
+          style="font-family: 'Cinzel', serif; letter-spacing: 0.02em;">CHEMPAKA</span>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 shrink-0 md:justify-self-end">
+        <a href="#"
+          class="w-8 h-8 rounded-full border border-[#333333] hover:border-white hover:bg-white hover:text-black flex items-center justify-center text-[#aaaaaa] transition-all duration-300"
+          aria-label="Facebook">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+          </svg>
+        </a>
+        <a href="#"
+          class="w-8 h-8 rounded-full border border-[#333333] hover:border-white hover:bg-white hover:text-black flex items-center justify-center text-[#aaaaaa] transition-all duration-300"
+          aria-label="Pinterest">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.162 0 7.396 2.967 7.396 6.93 0 4.135-2.607 7.462-6.227 7.462-1.216 0-2.359-.631-2.75-1.378l-.749 2.853c-.27 1.03-1 2.317-1.492 3.116 1.124.347 2.317.535 3.551.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="#"
+          class="w-8 h-8 rounded-full border border-[#333333] hover:border-white hover:bg-white hover:text-black flex items-center justify-center text-[#aaaaaa] transition-all duration-300"
+          aria-label="Instagram">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
+        <a href="#"
+          class="w-8 h-8 rounded-full border border-[#333333] hover:border-white hover:bg-white hover:text-black flex items-center justify-center text-[#aaaaaa] transition-all duration-300"
+          aria-label="Youtube">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M23.498 6.163c-.272-1.026-1.08-1.834-2.106-2.108C19.52 3.545 12 3.545 12 3.545s-7.52 0-9.392.51c-1.026.274-1.834 1.082-2.108 2.108C0 8.037 0 12 0 12s0 3.963.5 5.837c.274 1.026 1.082 1.834 2.108 2.108 1.872.51 9.392.51 9.392.51s7.52 0 9.392-.51c1.026-.274 1.834-1.082 2.108-2.108.5-1.874.5-5.837.5-5.837s0-3.963-.5-5.837zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z" />
+          </svg>
+        </a>
+        <a href="#"
+          class="w-8 h-8 rounded-full border border-[#333333] hover:border-white hover:bg-white hover:text-black flex items-center justify-center text-[#aaaaaa] transition-all duration-300"
+          aria-label="Tiktok">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.99-1.72-.08.65-.06 1.32-.06 1.98 0 2.01-.38 4.03-1.48 5.69-1.37 2.07-3.79 3.38-6.29 3.39-2.19.01-4.41-.84-5.83-2.53-1.63-1.93-2.21-4.7-1.43-7.14C4.16 7.4 6.3 5.48 8.89 5.09c.83-.12 1.68-.07 2.51-.08.01 1.43-.01 2.87-.01 4.3-.64-.09-1.3-.02-1.92.17-1.12.35-2.07 1.25-2.39 2.37-.46 1.57.17 3.42 1.54 4.25.92.56 2.04.66 3.06.33 1.09-.36 1.97-1.28 2.29-2.37.11-.38.16-.78.16-1.18V.02z" />
+          </svg>
+        </a>
+        <a href="#"
+          class="w-8 h-8 rounded-full border border-[#333333] hover:border-white hover:bg-white hover:text-black flex items-center justify-center text-[#aaaaaa] transition-all duration-300"
+          aria-label="X">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.fade-in-up').forEach((el) => {
+        observer.observe(el);
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    function dismissPromo() {
+      const banner = document.getElementById('promo-banner');
+      if (banner) {
+        banner.style.display = 'none';
+      }
+    }
+
+    function toggleSearch(open) {
+      const overlay = document.getElementById('search-overlay');
+      if (overlay) {
+        if (open) {
+          overlay.classList.remove('hidden');
+          overlay.querySelector('input').focus();
+        } else {
+          overlay.classList.add('hidden');
+        }
+      }
+    }
+
+    function toggleMobileDrawer(open) {
+      const drawer = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      if (drawer && backdrop) {
+        if (open) {
+          drawer.classList.remove('-translate-x-full');
+          backdrop.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        } else {
+          drawer.classList.add('-translate-x-full');
+          backdrop.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }
+      }
+    }
+
+    function submitBookingForm(event) {
+      event.preventDefault();
+      const boutiqueEl = document.getElementById('booking-boutique');
+      const serviceEl = document.getElementById('booking-service');
+      const dateEl = document.getElementById('booking-date');
+      const timeEl = document.getElementById('booking-time');
+      const nameEl = document.getElementById('booking-name');
+      const phoneEl = document.getElementById('booking-phone');
+
+      const errBoutique = document.getElementById('error-booking-boutique');
+      const errService = document.getElementById('error-booking-service');
+      const errDate = document.getElementById('error-booking-date');
+      const errTime = document.getElementById('error-booking-time');
+      const errName = document.getElementById('error-booking-name');
+      const errPhone = document.getElementById('error-booking-phone');
+
+      errBoutique.classList.add('hidden');
+      errService.classList.add('hidden');
+      errDate.classList.add('hidden');
+      errTime.classList.add('hidden');
+      errName.classList.add('hidden');
+      errPhone.classList.add('hidden');
+
+      let isValid = true;
+      if (!boutiqueEl.value) {
+        errBoutique.classList.remove('hidden');
+        isValid = false;
+      }
+      if (!serviceEl.value) {
+        errService.classList.remove('hidden');
+        isValid = false;
+      }
+      if (!dateEl.value) {
+        errDate.classList.remove('hidden');
+        isValid = false;
+      } else {
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const selectedDate = new Date(dateEl.value);
+        selectedDate.setHours(0,0,0,0);
+        if (selectedDate < today) {
+          errDate.classList.remove('hidden');
+          isValid = false;
+        }
+      }
+      if (!timeEl.value) {
+        errTime.classList.remove('hidden');
+        isValid = false;
+      }
+      if (!nameEl.value || nameEl.value.trim().length < 2) {
+        errName.classList.remove('hidden');
+        isValid = false;
+      }
+      const phoneRegex = /^\+?[0-9\s\-]{8,15}$/;
+      if (!phoneRegex.test(phoneEl.value)) {
+        errPhone.classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (isValid) {
+        const boutiqueText = boutiqueEl.options[boutiqueEl.selectedIndex].text;
+        const serviceText = serviceEl.options[serviceEl.selectedIndex].text;
+        const parts = dateEl.value.split('-');
+        const formattedDate = (parts[2] && parts[1] && parts[0]) ? `${parts[2]}/${parts[1]}/${parts[0]}` : dateEl.value;
+
+        document.getElementById('success-boutique-name').innerText = boutiqueText;
+        document.getElementById('success-booking-service').innerText = serviceText;
+        document.getElementById('success-booking-datetime').innerText = `${formattedDate} @ ${timeEl.value}`;
+        document.getElementById('success-booking-client').innerText = nameEl.value;
+
+        document.getElementById('booking-form-container').classList.add('hidden');
+        document.getElementById('booking-success-container').classList.remove('hidden');
+      }
+    }
+
+    function resetBookingForm() {
+      document.getElementById('booking-boutique').value = '';
+      document.getElementById('booking-service').value = '';
+      document.getElementById('booking-date').value = '';
+      document.getElementById('booking-time').value = '';
+      document.getElementById('booking-name').value = '';
+      document.getElementById('booking-phone').value = '';
+
+      document.getElementById('error-booking-boutique').classList.add('hidden');
+      document.getElementById('error-booking-service').classList.add('hidden');
+      document.getElementById('error-booking-date').classList.add('hidden');
+      document.getElementById('error-booking-time').classList.add('hidden');
+      document.getElementById('error-booking-name').classList.add('hidden');
+      document.getElementById('error-booking-phone').classList.add('hidden');
+
+      document.getElementById('booking-form-container').classList.remove('hidden');
+      document.getElementById('booking-success-container').classList.add('hidden');
+    }
+  </script>
+</body>
+
+</html>
